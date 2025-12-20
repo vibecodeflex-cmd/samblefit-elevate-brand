@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Award, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-hardware.jpg";
 
 export function Hero() {
@@ -45,12 +46,14 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up delay-300">
-            <Button variant="hero" size="xl" className="group">
-              Explore Collections
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button asChild variant="hero" size="xl" className="group">
+              <Link to="/collections">
+                Explore Collections
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
-            <Button variant="heroOutline" size="xl">
-              Request Consultation
+            <Button asChild variant="heroOutline" size="xl">
+              <Link to="/#contact">Request Consultation</Link>
             </Button>
           </div>
 
