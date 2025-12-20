@@ -25,6 +25,8 @@ import smartAccessImg from "@/assets/smart-access.jpg";
 import doorControlsImg from "@/assets/door-controls.jpg";
 import locksCylindersImg from "@/assets/locks-cylinders.jpg";
 import doorAccessoriesImg from "@/assets/door-accessories.jpg";
+import officePartitionsImg from "@/assets/office-partitions.jpg";
+import suspendedCeilingsImg from "@/assets/suspended-ceilings.jpg";
 
 const collections = [
   {
@@ -146,6 +148,22 @@ const collections = [
     images: [doorAccessoriesImg, accessoriesImg, hingesImg],
     projects: ["Residential", "Commercial", "Hotels"],
     stats: { completed: "450+", rating: "Complete Range" }
+  },
+  {
+    id: "office-partitions",
+    title: "Office Partitions",
+    description: "Demountable glass and aluminium partition systems for modern workspaces. Create flexible office layouts with professional finishes.",
+    images: [officePartitionsImg, wallPanellingImg, homeDecoImg],
+    projects: ["Corporate Offices", "Banks", "Shopping Centres"],
+    stats: { completed: "75+", rating: "Demountable" }
+  },
+  {
+    id: "suspended-ceilings",
+    title: "Suspended Ceilings",
+    description: "Acoustic and decorative suspended ceiling solutions for commercial and institutional buildings. Integrated lighting options available.",
+    images: [suspendedCeilingsImg, officePartitionsImg, wallPanellingImg],
+    projects: ["Offices", "Hospitals", "Schools"],
+    stats: { completed: "90+", rating: "Acoustic" }
   }
 ];
 

@@ -26,6 +26,8 @@ import doorControlsImg from "@/assets/door-controls.jpg";
 import locksCylindersImg from "@/assets/locks-cylinders.jpg";
 import homeInteriorImg from "@/assets/home-interior.jpg";
 import doorAccessoriesImg from "@/assets/door-accessories.jpg";
+import officePartitionsImg from "@/assets/office-partitions.jpg";
+import suspendedCeilingsImg from "@/assets/suspended-ceilings.jpg";
 
 const collectionsData: Record<string, {
   title: string;
@@ -409,6 +411,56 @@ const collectionsData: Record<string, {
       { name: "Lever Handles", image: leverHandlesImg, link: "/collections/lever-handles" },
       { name: "Pull Handles", image: pullHandlesImg, link: "/collections/pull-handles" },
       { name: "Hinges", image: hingesImg, link: "/collections/hinges" }
+    ]
+  },
+  "office-partitions": {
+    title: "Office Partitions",
+    description: "Demountable partition systems for modern workspaces",
+    longDescription: "Our demountable partition systems provide flexible workspace solutions for offices, banks, and commercial buildings. Glass and aluminium partitions create modern, open environments while maintaining privacy and acoustic control. Easy to install, relocate, and reconfigure as your business needs change.",
+    images: [officePartitionsImg, wallPanellingImg, homeDecoImg],
+    features: [
+      "Full-height glass partitions",
+      "Aluminium framing systems",
+      "Acoustic glazing options",
+      "Integrated blinds available",
+      "Door and access solutions",
+      "Easy relocation and reconfiguration"
+    ],
+    specifications: [
+      { label: "Frame", value: "Aluminium profiles" },
+      { label: "Glass", value: "Single, Double, Acoustic" },
+      { label: "Height", value: "Floor to ceiling" },
+      { label: "Lead Time", value: "3-5 weeks" }
+    ],
+    relatedProducts: [
+      { name: "Wall Panelling", image: wallPanellingImg, link: "/collections/wall-panelling" },
+      { name: "Suspended Ceilings", image: suspendedCeilingsImg, link: "/collections/suspended-ceilings" },
+      { name: "Door Controls", image: doorControlsImg, link: "/collections/door-controls" }
+    ]
+  },
+  "suspended-ceilings": {
+    title: "Suspended Ceilings",
+    description: "Acoustic and decorative ceiling solutions",
+    longDescription: "Our suspended ceiling systems provide acoustic control, fire protection, and aesthetic enhancement for commercial, institutional, and healthcare environments. Available in a range of materials including mineral fibre, metal, and gypsum with integrated lighting and services options.",
+    images: [suspendedCeilingsImg, officePartitionsImg, wallPanellingImg],
+    features: [
+      "Mineral fibre acoustic tiles",
+      "Metal pan ceiling systems",
+      "Gypsum board ceilings",
+      "Integrated lighting solutions",
+      "Fire-rated options available",
+      "Easy access for services"
+    ],
+    specifications: [
+      { label: "Grid", value: "Exposed, Semi-concealed, Concealed" },
+      { label: "Tile Size", value: "600x600mm, 600x1200mm" },
+      { label: "Fire Rating", value: "Up to 2 hours" },
+      { label: "Acoustic Rating", value: "NRC 0.55 - 0.95" }
+    ],
+    relatedProducts: [
+      { name: "Office Partitions", image: officePartitionsImg, link: "/collections/office-partitions" },
+      { name: "Wall Panelling", image: wallPanellingImg, link: "/collections/wall-panelling" },
+      { name: "Shopfitting", image: shopfrontImg, link: "/collections/shopfitting" }
     ]
   }
 };
