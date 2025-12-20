@@ -1,5 +1,6 @@
 import { ArrowRight, Lock, Grip, CircleDot, DoorClosed, Bath, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -8,6 +9,7 @@ const categories = [
     description: "Premium stainless steel handles with ergonomic design",
     models: ["Albourg", "Alta", "Bergen", "Helsinki", "Malmo"],
     color: "primary",
+    href: "/collections/lever-handles",
   },
   {
     icon: DoorClosed,
@@ -15,6 +17,7 @@ const categories = [
     description: "Architectural pull handles for modern entrances",
     models: ["T-Bar", "D-Line", "Offset", "Back-to-Back"],
     color: "secondary",
+    href: "/collections/pull-handles",
   },
   {
     icon: Lock,
@@ -22,6 +25,7 @@ const categories = [
     description: "Advanced security solutions with Euro profiles",
     models: ["Mortice Locks", "Deadlocks", "Euro Cylinders"],
     color: "accent",
+    href: "/collections/locks-cylinders",
   },
   {
     icon: CircleDot,
@@ -29,6 +33,7 @@ const categories = [
     description: "Heavy-duty hinges for commercial applications",
     models: ["Ball Bearing", "Fire Rated", "Concealed"],
     color: "primary",
+    href: "/products?category=Hinges",
   },
   {
     icon: Bath,
@@ -36,6 +41,7 @@ const categories = [
     description: "Elegant bathroom fittings in premium finishes",
     models: ["Towel Rails", "Robe Hooks", "Paper Holders"],
     color: "secondary",
+    href: "/collections/bathroom",
   },
   {
     icon: Smartphone,
@@ -43,6 +49,7 @@ const categories = [
     description: "Electronic locking systems for modern security",
     models: ["Smart Locks", "Access Control", "Digital Keypads"],
     color: "accent",
+    href: "/products?category=Smart+Access",
   },
 ];
 
@@ -126,13 +133,13 @@ export function Products() {
                 </div>
 
                 {/* Link */}
-                <a
-                  href={`#${category.title.toLowerCase().replace(/ /g, "-")}`}
+                <Link
+                  to={category.href}
                   className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:text-primary-light transition-colors"
                 >
                   View Collection
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             );
           })}
@@ -140,9 +147,11 @@ export function Products() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button variant="premium" size="lg">
-            Browse Full Catalog
-            <ArrowRight className="w-5 h-5" />
+          <Button asChild variant="premium" size="lg">
+            <Link to="/products">
+              Browse Full Catalog
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </Button>
         </div>
       </div>

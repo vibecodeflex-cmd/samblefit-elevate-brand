@@ -2,31 +2,35 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "/" },
   {
     name: "Products",
-    href: "#products",
+    href: "/products",
     dropdown: [
-      "Lever Handles",
-      "Pull Handles",
-      "Locks & Cylinders",
-      "Hinges",
-      "Door Controls",
-      "Bathroom Accessories",
-      "QS Access Smart Systems",
+      { name: "Lever Handles", href: "/collections/lever-handles" },
+      { name: "Pull Handles", href: "/collections/pull-handles" },
+      { name: "Locks & Cylinders", href: "/collections/locks-cylinders" },
+      { name: "Hinges", href: "/products?category=Hinges" },
+      { name: "Door Controls", href: "/products?category=Door+Controls" },
+      { name: "Bathroom Accessories", href: "/collections/bathroom" },
+      { name: "PVD Collection", href: "/collections/pvd-collection" },
     ],
   },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Collections", href: "/collections" },
+  { name: "Services", href: "/#services" },
+  { name: "About", href: "/#about" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +39,14 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith("/#") && isHomePage) {
+      const element = document.querySelector(href.replace("/", ""));
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -47,25 +59,25 @@ export function Header() {
     >
       <nav className="container-wide flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="w-12 h-12 gradient-royal rounded-lg flex items-center justify-center shadow-royal group-hover:shadow-glow transition-all duration-300">
             <span className="text-primary-foreground font-display font-bold text-xl">S</span>
           </div>
           <div className="hidden sm:block">
             <span className={cn(
               "font-display text-xl font-semibold tracking-tight transition-colors",
-              isScrolled ? "text-foreground" : "text-primary-foreground"
+              isScrolled || !isHomePage ? "text-foreground" : "text-primary-foreground"
             )}>
               Samblefit
             </span>
             <span className={cn(
               "block text-xs tracking-widest uppercase transition-colors",
-              isScrolled ? "text-muted-foreground" : "text-primary-foreground/70"
+              isScrolled || !isHomePage ? "text-muted-foreground" : "text-primary-foreground/70"
             )}>
               Design Gallery
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
@@ -76,31 +88,32 @@ export function Header() {
               onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className={cn(
                   "flex items-center gap-1 text-sm font-medium transition-colors link-underline py-2",
-                  isScrolled
+                  isScrolled || !isHomePage
                     ? "text-foreground hover:text-primary"
                     : "text-primary-foreground/90 hover:text-primary-foreground"
                 )}
               >
                 {item.name}
                 {item.dropdown && <ChevronDown className="w-4 h-4" />}
-              </a>
+              </Link>
 
               {/* Dropdown */}
               {item.dropdown && activeDropdown === item.name && (
                 <div className="absolute top-full left-0 pt-2 animate-fade-up">
                   <div className="bg-card rounded-lg shadow-elevated border border-border/50 py-2 min-w-[220px]">
                     {item.dropdown.map((subItem) => (
-                      <a
-                        key={subItem}
-                        href={`#${subItem.toLowerCase().replace(/ /g, "-")}`}
+                      <Link
+                        key={subItem.name}
+                        to={subItem.href}
                         className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                       >
-                        {subItem}
-                      </a>
+                        {subItem.name}
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -112,16 +125,18 @@ export function Header() {
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-4">
           <Button
-            variant={isScrolled ? "outline" : "heroOutline"}
+            asChild
+            variant={isScrolled || !isHomePage ? "outline" : "heroOutline"}
             size="sm"
           >
-            Get Quote
+            <Link to="/#contact">Get Quote</Link>
           </Button>
           <Button
-            variant={isScrolled ? "default" : "hero"}
+            asChild
+            variant={isScrolled || !isHomePage ? "default" : "hero"}
             size="sm"
           >
-            View Catalog
+            <Link to="/products">View Catalog</Link>
           </Button>
         </div>
 
@@ -130,7 +145,7 @@ export function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={cn(
             "lg:hidden p-2 rounded-lg transition-colors",
-            isScrolled
+            isScrolled || !isHomePage
               ? "text-foreground hover:bg-muted"
               : "text-primary-foreground hover:bg-primary-foreground/10"
           )}
@@ -145,35 +160,35 @@ export function Header() {
           <div className="container-wide py-4 space-y-1">
             {navigation.map((item) => (
               <div key={item.name}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="block py-3 text-foreground font-medium hover:text-primary transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
                 >
                   {item.name}
-                </a>
+                </Link>
                 {item.dropdown && (
                   <div className="pl-4 space-y-1 border-l-2 border-border ml-2">
                     {item.dropdown.map((subItem) => (
-                      <a
-                        key={subItem}
-                        href={`#${subItem.toLowerCase().replace(/ /g, "-")}`}
+                      <Link
+                        key={subItem.name}
+                        to={subItem.href}
                         className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        {subItem}
-                      </a>
+                        {subItem.name}
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
             ))}
             <div className="flex gap-3 pt-4">
-              <Button variant="outline" size="sm" className="flex-1">
-                Get Quote
+              <Button asChild variant="outline" size="sm" className="flex-1">
+                <Link to="/#contact">Get Quote</Link>
               </Button>
-              <Button variant="default" size="sm" className="flex-1">
-                View Catalog
+              <Button asChild variant="default" size="sm" className="flex-1">
+                <Link to="/products">View Catalog</Link>
               </Button>
             </div>
           </div>
