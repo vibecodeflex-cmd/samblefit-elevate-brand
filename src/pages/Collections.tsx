@@ -20,6 +20,11 @@ import accessoriesImg from "@/assets/accessories.jpg";
 import bathroomAccessoriesImg from "@/assets/bathroom-accessories.jpg";
 import pvdRangeImg from "@/assets/pvd-range.jpg";
 import testimonialProjectsImg from "@/assets/testimonial-projects.jpg";
+import hingesImg from "@/assets/hinges.jpg";
+import smartAccessImg from "@/assets/smart-access.jpg";
+import doorControlsImg from "@/assets/door-controls.jpg";
+import locksCylindersImg from "@/assets/locks-cylinders.jpg";
+import doorAccessoriesImg from "@/assets/door-accessories.jpg";
 
 const collections = [
   {
@@ -66,9 +71,49 @@ const collections = [
     id: "hardware",
     title: "Architectural Hardware",
     description: "Premium QS stainless steel ironmongery collection including lever handles, pull handles, locks, cylinders, hinges and door controls with 5-year warranty.",
-    images: [leverHandlesImg, pullHandlesImg, accessoriesImg],
+    images: [leverHandlesImg, pullHandlesImg, hingesImg],
     projects: ["Lever Handles", "Pull Handles", "Door Controls"],
     stats: { completed: "500+", rating: "5-Year Warranty" }
+  },
+  {
+    id: "lever-handles",
+    title: "Lever Handles",
+    description: "Signature range of stainless steel lever handles featuring over 20 designs including ALBOURG, ALTA, BERGEN, HELSINKI, and more.",
+    images: [leverHandlesImg, pvdRangeImg, accessoriesImg],
+    projects: ["Residential", "Commercial", "Fire Doors"],
+    stats: { completed: "1000+", rating: "Premium" }
+  },
+  {
+    id: "pull-handles",
+    title: "Pull Handles",
+    description: "Architectural pull handles for entrance and glass doors including T-handles, D-handles, and crescent designs in various lengths.",
+    images: [pullHandlesImg, leverHandlesImg, accessoriesImg],
+    projects: ["Entrance Doors", "Glass Doors", "Shopfronts"],
+    stats: { completed: "800+", rating: "Heavy Duty" }
+  },
+  {
+    id: "locks-cylinders",
+    title: "Locks & Cylinders",
+    description: "High-security mortice locks and euro profile cylinders with anti-snap, anti-drill protection. Complete residential and commercial lock sets.",
+    images: [locksCylindersImg, pvdRangeImg, accessoriesImg],
+    projects: ["Mortice Locks", "Euro Cylinders", "Lock Sets"],
+    stats: { completed: "600+", rating: "High Security" }
+  },
+  {
+    id: "hinges",
+    title: "Hinges Collection",
+    description: "Heavy-duty ball bearing hinges, self-closing spring hinges, and fire-rated hinges for residential and commercial applications.",
+    images: [hingesImg, accessoriesImg, doorControlsImg],
+    projects: ["Fire Doors", "Commercial", "Residential"],
+    stats: { completed: "400+", rating: "Fire Rated" }
+  },
+  {
+    id: "door-controls",
+    title: "Door Controls",
+    description: "Hydraulic overhead door closers and concealed floor springs for controlled, safe door operation in commercial and residential settings.",
+    images: [doorControlsImg, hingesImg, accessoriesImg],
+    projects: ["Fire Doors", "Glass Doors", "Commercial"],
+    stats: { completed: "350+", rating: "CE Marked" }
   },
   {
     id: "bathroom",
@@ -85,6 +130,22 @@ const collections = [
     images: [pvdRangeImg, leverHandlesImg, pullHandlesImg],
     projects: ["Luxury Residences", "Boutique Hotels", "Premium Offices"],
     stats: { completed: "150+", rating: "Scratch Resistant" }
+  },
+  {
+    id: "smart-access",
+    title: "Smart Access Systems",
+    description: "Modern electronic access control solutions including RFID card readers, digital keypads, and smart locks with mobile app control.",
+    images: [smartAccessImg, locksCylindersImg, pvdRangeImg],
+    projects: ["Office Buildings", "Hotels", "Residences"],
+    stats: { completed: "100+", rating: "Modern Tech" }
+  },
+  {
+    id: "door-accessories",
+    title: "Door Accessories",
+    description: "Essential door hardware including door viewers, door stops, flush pulls, cabin hooks, and letter plates in quality stainless steel.",
+    images: [doorAccessoriesImg, accessoriesImg, hingesImg],
+    projects: ["Residential", "Commercial", "Hotels"],
+    stats: { completed: "450+", rating: "Complete Range" }
   }
 ];
 

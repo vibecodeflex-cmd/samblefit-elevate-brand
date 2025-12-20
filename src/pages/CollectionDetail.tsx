@@ -20,6 +20,12 @@ import accessoriesImg from "@/assets/accessories.jpg";
 import bathroomAccessoriesImg from "@/assets/bathroom-accessories.jpg";
 import pvdRangeImg from "@/assets/pvd-range.jpg";
 import testimonialProjectsImg from "@/assets/testimonial-projects.jpg";
+import hingesImg from "@/assets/hinges.jpg";
+import smartAccessImg from "@/assets/smart-access.jpg";
+import doorControlsImg from "@/assets/door-controls.jpg";
+import locksCylindersImg from "@/assets/locks-cylinders.jpg";
+import homeInteriorImg from "@/assets/home-interior.jpg";
+import doorAccessoriesImg from "@/assets/door-accessories.jpg";
 
 const collectionsData: Record<string, {
   title: string;
@@ -284,7 +290,7 @@ const collectionsData: Record<string, {
     title: "Locks & Cylinders",
     description: "High-security locking solutions",
     longDescription: "Our lock and cylinder range meets international security standards, offering mortice locks, euro profile cylinders, and complete lock sets for residential and commercial applications. From hostel locks to residence sets, we provide solutions for every security requirement.",
-    images: [pvdRangeImg, accessoriesImg, leverHandlesImg],
+    images: [locksCylindersImg, pvdRangeImg, accessoriesImg],
     features: [
       "Euro profile cylinders with anti-snap protection",
       "Mortice lock cases in multiple sizes",
@@ -301,8 +307,108 @@ const collectionsData: Record<string, {
     ],
     relatedProducts: [
       { name: "Lever Handles", image: leverHandlesImg, link: "/collections/lever-handles" },
-      { name: "Hinges", image: accessoriesImg, link: "/products" },
-      { name: "Smart Access", image: pvdRangeImg, link: "/products" }
+      { name: "Hinges", image: hingesImg, link: "/collections/hinges" },
+      { name: "Smart Access", image: smartAccessImg, link: "/collections/smart-access" }
+    ]
+  },
+  "hinges": {
+    title: "Hinges Collection",
+    description: "Heavy-duty hinges for all applications",
+    longDescription: "Our comprehensive range of hinges includes ball bearing hinges, spring hinges, fire-rated hinges, and concealed hinges. All manufactured from Grade 304 stainless steel for durability and smooth, silent operation in residential and commercial settings.",
+    images: [hingesImg, accessoriesImg, doorControlsImg],
+    features: [
+      "Ball bearing hinges for smooth operation",
+      "Self-closing spring hinges",
+      "Fire-rated hinges with certification",
+      "Concealed hinges for modern aesthetics",
+      "Heavy-duty commercial grade options",
+      "Multiple sizes and finishes available"
+    ],
+    specifications: [
+      { label: "Material", value: "Grade 304 Stainless Steel" },
+      { label: "Finish", value: "Satin, Polished" },
+      { label: "Fire Rating", value: "Up to 4 hours" },
+      { label: "Warranty", value: "5 years" }
+    ],
+    relatedProducts: [
+      { name: "Door Controls", image: doorControlsImg, link: "/collections/door-controls" },
+      { name: "Lever Handles", image: leverHandlesImg, link: "/collections/lever-handles" },
+      { name: "Door Accessories", image: doorAccessoriesImg, link: "/collections/door-accessories" }
+    ]
+  },
+  "door-controls": {
+    title: "Door Controls",
+    description: "Hydraulic door closers and floor springs",
+    longDescription: "Our door control range includes overhead door closers, floor springs, and automatic door systems. Designed for fire doors, glass doors, and high-traffic areas, these products ensure controlled, safe door operation in commercial and residential environments.",
+    images: [doorControlsImg, accessoriesImg, hingesImg],
+    features: [
+      "Overhead hydraulic door closers",
+      "Concealed floor springs for glass doors",
+      "Adjustable closing speed and latching",
+      "Backcheck and delayed action options",
+      "Fire-certified products available",
+      "Suitable for doors up to 120kg"
+    ],
+    specifications: [
+      { label: "Type", value: "Overhead, Floor Spring, Concealed" },
+      { label: "Door Weight", value: "Up to 120kg" },
+      { label: "Fire Rating", value: "CE Marked, Fire Certified" },
+      { label: "Warranty", value: "5 years" }
+    ],
+    relatedProducts: [
+      { name: "Hinges", image: hingesImg, link: "/collections/hinges" },
+      { name: "Door Accessories", image: doorAccessoriesImg, link: "/collections/door-accessories" },
+      { name: "Pull Handles", image: pullHandlesImg, link: "/collections/pull-handles" }
+    ]
+  },
+  "smart-access": {
+    title: "Smart Access Systems",
+    description: "Electronic access control solutions",
+    longDescription: "QS Access smart systems provide modern, secure entry solutions for residential and commercial properties. Our range includes RFID card readers, digital keypads, smart locks with mobile app control, and complete access management systems for buildings of all sizes.",
+    images: [smartAccessImg, locksCylindersImg, pvdRangeImg],
+    features: [
+      "RFID card and fob access",
+      "Digital keypad entry systems",
+      "Smartphone app control",
+      "Audit trail and access logs",
+      "Battery backup operation",
+      "Easy retrofit installation"
+    ],
+    specifications: [
+      { label: "Technology", value: "RFID, Bluetooth, Keypad" },
+      { label: "Power", value: "Battery with mains backup" },
+      { label: "Users", value: "Up to 1000 user codes" },
+      { label: "Warranty", value: "3 years" }
+    ],
+    relatedProducts: [
+      { name: "Locks & Cylinders", image: locksCylindersImg, link: "/collections/locks-cylinders" },
+      { name: "Lever Handles", image: leverHandlesImg, link: "/collections/lever-handles" },
+      { name: "Door Controls", image: doorControlsImg, link: "/collections/door-controls" }
+    ]
+  },
+  "door-accessories": {
+    title: "Door Accessories",
+    description: "Essential door hardware accessories",
+    longDescription: "Complete your door hardware with our range of accessories including door viewers, door stops, flush pulls, cabin hooks, and letter plates. All manufactured from quality stainless steel to match our handle and lock ranges.",
+    images: [doorAccessoriesImg, accessoriesImg, hingesImg],
+    features: [
+      "Wide-angle door viewers (200°)",
+      "Floor and wall mounted door stops",
+      "Flush pull handles for sliding doors",
+      "Cabin hooks and stays",
+      "Letter plates and mail slots",
+      "Kick plates and push plates"
+    ],
+    specifications: [
+      { label: "Material", value: "Grade 304 Stainless Steel" },
+      { label: "Finish", value: "Satin, Polished, PVD" },
+      { label: "Sizes", value: "Various sizes available" },
+      { label: "Warranty", value: "5 years" }
+    ],
+    relatedProducts: [
+      { name: "Lever Handles", image: leverHandlesImg, link: "/collections/lever-handles" },
+      { name: "Pull Handles", image: pullHandlesImg, link: "/collections/pull-handles" },
+      { name: "Hinges", image: hingesImg, link: "/collections/hinges" }
     ]
   }
 };

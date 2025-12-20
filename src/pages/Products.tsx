@@ -14,6 +14,11 @@ import pvdRangeImg from "@/assets/pvd-range.jpg";
 import aluminiumDoorsImg from "@/assets/aluminium-doors.jpg";
 import wardrobeImg from "@/assets/wardrobe.jpg";
 import kitchenImg from "@/assets/kitchen.jpg";
+import hingesImg from "@/assets/hinges.jpg";
+import smartAccessImg from "@/assets/smart-access.jpg";
+import doorControlsImg from "@/assets/door-controls.jpg";
+import locksCylindersImg from "@/assets/locks-cylinders.jpg";
+import doorAccessoriesImg from "@/assets/door-accessories.jpg";
 
 const categories = [
   "All Products",
@@ -97,7 +102,7 @@ const products = [
     category: "Locks & Cylinders",
     description: "High-security mortice lock with cylinder. Meets international security standards.",
     price: "Contact for Price",
-    image: pvdRangeImg,
+    image: locksCylindersImg,
     features: ["High Security", "Euro Cylinder", "Anti-Pick"],
     rating: 5
   },
@@ -107,7 +112,7 @@ const products = [
     category: "Locks & Cylinders",
     description: "Precision-engineered cylinder with anti-snap and anti-drill protection.",
     price: "Contact for Price",
-    image: pvdRangeImg,
+    image: locksCylindersImg,
     features: ["Anti-Snap", "Anti-Drill", "5 Keys Included"],
     rating: 5
   },
@@ -117,7 +122,7 @@ const products = [
     category: "Locks & Cylinders",
     description: "Complete residential lock set with handle, lock, and cylinder for ultimate security.",
     price: "Contact for Price",
-    image: pvdRangeImg,
+    image: locksCylindersImg,
     features: ["Complete Set", "Easy Install", "Residential Grade"],
     rating: 4
   },
@@ -127,7 +132,7 @@ const products = [
     category: "Hinges",
     description: "Heavy-duty ball bearing hinge for smooth, silent operation. Fire certified.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: hingesImg,
     features: ["Ball Bearing", "Fire Rated", "Heavy Duty"],
     rating: 5
   },
@@ -137,7 +142,7 @@ const products = [
     category: "Hinges",
     description: "Self-closing spring hinge for fire doors and high-traffic areas.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: hingesImg,
     features: ["Self-Closing", "Adjustable", "Fire Certified"],
     rating: 5
   },
@@ -147,7 +152,7 @@ const products = [
     category: "Door Controls",
     description: "Surface-mounted hydraulic door closer with adjustable closing speed and latching action.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: doorControlsImg,
     features: ["Fire Certified", "Adjustable", "Backcheck"],
     rating: 5,
     isNew: true
@@ -158,7 +163,7 @@ const products = [
     category: "Door Controls",
     description: "Concealed floor spring for frameless glass doors. Heavy-duty construction.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: doorControlsImg,
     features: ["Concealed", "Heavy Duty", "Glass Doors"],
     rating: 5
   },
@@ -219,7 +224,7 @@ const products = [
     category: "Smart Access",
     description: "Modern RFID card access system for secure entry. Easy installation and management.",
     price: "Contact for Price",
-    image: pvdRangeImg,
+    image: smartAccessImg,
     features: ["RFID Technology", "Easy Setup", "Audit Trail"],
     rating: 5
   },
@@ -229,7 +234,7 @@ const products = [
     category: "Smart Access",
     description: "Complete smart lock solution with keypad, card, and mobile access options.",
     price: "Contact for Price",
-    image: pvdRangeImg,
+    image: smartAccessImg,
     features: ["Multi-Access", "Mobile App", "Battery Backup"],
     rating: 5,
     isNew: true
@@ -240,7 +245,7 @@ const products = [
     category: "Door Accessories",
     description: "200-degree wide-angle door viewer for enhanced security and visibility.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: doorAccessoriesImg,
     features: ["Wide Angle", "Clear View", "Easy Install"],
     rating: 4
   },
@@ -250,7 +255,7 @@ const products = [
     category: "Door Accessories",
     description: "Heavy-duty floor-mounted door stop in stainless steel finish.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: doorAccessoriesImg,
     features: ["Floor Mount", "Heavy Duty", "Stainless Steel"],
     rating: 5
   },
@@ -260,7 +265,7 @@ const products = [
     category: "Door Accessories",
     description: "Recessed flush pull handle for sliding doors. Minimalist design.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: doorAccessoriesImg,
     features: ["Recessed", "Sliding Doors", "Modern Design"],
     rating: 5
   },
@@ -270,7 +275,7 @@ const products = [
     category: "Door Accessories",
     description: "Traditional cabin hook for holding doors open. Polished finish.",
     price: "Contact for Price",
-    image: accessoriesImg,
+    image: doorAccessoriesImg,
     features: ["Classic Design", "Multiple Sizes", "Polished"],
     rating: 4
   }
