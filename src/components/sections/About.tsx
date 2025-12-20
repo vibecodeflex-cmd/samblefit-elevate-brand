@@ -10,7 +10,7 @@ const values = [
 const stats = [
   { value: "2017", label: "Established" },
   { value: "20+", label: "Years Combined Experience" },
-  { value: "5yr", label: "Product Warranty" },
+  { value: "500+", label: "Projects Completed" },
   { value: "100%", label: "Customer Satisfaction" },
 ];
 

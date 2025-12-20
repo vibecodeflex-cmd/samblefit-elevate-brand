@@ -34,8 +34,7 @@ const navigation = [
     ],
   },
   { name: "Collections", href: "/collections" },
-  { name: "About", href: "/#about" },
-  { name: "Contact", href: "/#contact" },
+  { name: "About", href: "/about" },
 ];
 
 export function Header() {
