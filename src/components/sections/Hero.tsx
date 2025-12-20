@@ -41,7 +41,7 @@ export function Hero() {
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-xl mb-10 leading-relaxed opacity-0 animate-fade-up delay-200">
             From sophisticated locking systems to bespoke interior solutions, we transform 
-            architectural visions into enduring excellence. 5-year warranty on all products.
+            architectural visions into enduring excellence.
           </p>
 
           {/* CTAs */}
@@ -53,7 +53,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button asChild variant="heroOutline" size="xl">
-              <Link to="/#contact">Request Consultation</Link>
+              <Link to="/about">Learn More</Link>
             </Button>
           </div>
 
@@ -61,20 +61,20 @@ export function Hero() {
           <div className="flex flex-wrap gap-8 opacity-0 animate-fade-up delay-400">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
-                <Shield className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <p className="text-primary-foreground font-semibold">5-Year Warranty</p>
-                <p className="text-primary-foreground/60 text-sm">On all products</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
-                <Award className="w-6 h-6 text-secondary" />
+                <Award className="w-6 h-6 text-accent" />
               </div>
               <div>
                 <p className="text-primary-foreground font-semibold">Authorized Distributor</p>
                 <p className="text-primary-foreground/60 text-sm">QS Premium Hardware</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
+                <Shield className="w-6 h-6 text-secondary" />
+              </div>
+              <div>
+                <p className="text-primary-foreground font-semibold">Premium Quality</p>
+                <p className="text-primary-foreground/60 text-sm">Trusted since 2017</p>
               </div>
             </div>
           </div>
