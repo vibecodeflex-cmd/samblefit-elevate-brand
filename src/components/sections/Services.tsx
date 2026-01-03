@@ -9,125 +9,87 @@ const services = [
   {
     image: aluminiumImage,
     title: "Aluminium Shopfronts",
-    description: "Premium aluminium doors, windows, and commercial entrances crafted for durability and modern aesthetics.",
-    features: ["Custom Designs", "Fire Rated Options", "Energy Efficient"],
+    description: "Premium aluminium doors, windows, and commercial entrances.",
     href: "/collections/aluminium",
   },
   {
     image: kitchenImage,
     title: "Kitchen Solutions",
-    description: "Bespoke kitchen installations featuring premium cabinets, countertops, and hardware fittings.",
-    features: ["Custom Cabinetry", "Premium Handles", "Full Installation"],
+    description: "Bespoke kitchen installations with premium finishes.",
     href: "/collections/kitchens",
   },
   {
     image: wardrobeImage,
     title: "Wardrobes & Storage",
-    description: "Luxury wardrobe systems with intelligent storage solutions and sophisticated finishes.",
-    features: ["Walk-in Closets", "Sliding Systems", "LED Integration"],
+    description: "Luxury wardrobe systems with intelligent storage solutions.",
     href: "/collections/wardrobes",
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="section-padding gradient-surface">
+    <section id="services" className="section-padding bg-muted">
       <div className="container-wide">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
-            <span className="text-accent font-medium uppercase tracking-widest text-sm mb-4 block">
-              Interior Solutions
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground">
-              Complete Fit-Out
-              <span className="text-gradient-premium block mt-1">Services</span>
-            </h2>
-          </div>
-          <p className="text-muted-foreground max-w-md lg:text-right">
+        <div className="max-w-2xl mb-12">
+          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
+            Complete Fit-Out Services
+          </h2>
+          <p className="text-muted-foreground text-sm">
             From concept to completion, we deliver exceptional craftsmanship in every 
-            interior project. Quality finishes that stand the test of time.
+            interior project.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
+        <div className="grid md:grid-cols-3 gap-6">
+          {services.map((service) => (
+            <Link
               key={service.title}
-              className="group relative overflow-hidden rounded-2xl bg-card shadow-elevated"
-              style={{ animationDelay: `${index * 150}ms` }}
+              to={service.href}
+              className="group"
             >
-              {/* Image */}
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden bg-background mb-4">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
               </div>
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-                <h3 className="font-display text-2xl text-primary-foreground mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-primary-foreground/80 text-sm mb-4 line-clamp-2">
-                  {service.description}
-                </p>
-
-                {/* Features */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {service.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className="text-xs bg-primary-foreground/20 text-primary-foreground px-3 py-1 rounded-full backdrop-blur-sm"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Link */}
-                <Link
-                  to={service.href}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-accent group-hover:text-accent-light transition-colors"
-                >
-                  View Collection
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
+              <h3 className="font-semibold text-foreground mb-2 group-hover:underline">
+                {service.title}
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                {service.description}
+              </p>
+            </Link>
           ))}
         </div>
 
-        {/* Additional Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        {/* Additional Services */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
           {[
-            { title: "Wall Panelling", desc: "Decorative & acoustic panels", href: "/collections/wall-panelling" },
-            { title: "Office Partitions", desc: "Demountable systems", href: "/collections/office-partitions" },
-            { title: "Suspended Ceilings", desc: "Acoustic & aesthetic solutions", href: "/collections/suspended-ceilings" },
-            { title: "Shop Fitting", desc: "Complete retail solutions", href: "/collections/shopfitting" },
-          ].map((item, index) => (
+            { title: "Wall Panelling", href: "/collections/wall-panelling" },
+            { title: "Office Partitions", href: "/collections/office-partitions" },
+            { title: "Shop Fitting", href: "/collections/shopfitting" },
+            { title: "Hardware", href: "/collections/hardware" },
+          ].map((item) => (
             <Link
               to={item.href}
               key={item.title}
-              className="card-premium p-6 text-center group hover:shadow-elegant transition-all duration-300"
-              style={{ animationDelay: `${(index + 3) * 100}ms` }}
+              className="border border-border bg-background p-4 text-center hover:bg-muted transition-colors"
             >
-              <h4 className="font-display text-lg text-foreground mb-2 group-hover:text-primary transition-colors">{item.title}</h4>
-              <p className="text-muted-foreground text-sm">{item.desc}</p>
+              <span className="text-sm font-medium text-foreground">{item.title}</span>
             </Link>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <Button asChild variant="teal" size="lg">
-            <Link to="/#contact">
+        <div className="text-center mt-12">
+          <Button asChild>
+            <Link to="/contact">
               Request a Consultation
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </Button>
         </div>
